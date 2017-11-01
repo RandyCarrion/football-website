@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Document</title>
+</head>
+<body>
+
+<form>
+	<input type="text" name="username"> <!--this is what the user sees-->
+</form>
+<button onclick='submit()'>Submit</button> <!--this is the button to submit -->
+
+<h1 id="welcome">Welcome Message</h1>
+
+<script type="text/javascript"> //this is the connection of JS and HTML, after this, you open JS and close HTML
+	document.getElementById(/*refers to id in line 13*/"welcome").onclick/*event listener*/= submit /*event handler*/
+
+	function submit () {
+		var x = document/*this doc, not the html name*/.getElementsByTagName('input')[0].value //this pulls the string out of the 'input'
+		if (x==="BoneyM") { //if this is the input
+			document.getElementById("welcome").innerHTML= "Welcome Rasputin" /*The innerHTML property gets the HTML content (inner HTML) to display, output this. Change element*/
+		} else if (x==="Jurgen") {
+			document.getElementById("welcome").innerHTML= "Get out Weirdo"/*alert, if alert:('Go away you scum!') this alerts, pop up, if document., print = element*/
+		}
+	}
+</script>
+</body>
+</html>
